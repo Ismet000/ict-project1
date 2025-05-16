@@ -1,0 +1,148 @@
+/* .sidenav-header {
+    padding-top: 24px;
+    text-align: center;
+
+    img {
+        border-radius: 100px;
+        object-fit: cover;
+    }
+
+    a {
+        padding: 10px;
+    }
+
+
+
+}
+
+.selected-menu-item {
+    color: #5779F8;
+   
+}
+
+
+mat-nav-list mat-icon {
+    color: #fff;
+}
+
+.title {
+    color: #fff;
+}
+
+.header-text {
+    color: #fff;
+} */
+
+
+/* Make icons and text white */
+a.mat-list-item {
+  color: white !important;
+
+  mat-icon {
+    color: white !important;
+  }
+
+  span[matListItemTitle] {
+    color: white !important;
+  }
+
+  &.selected-menu-item {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+
+    mat-icon,
+    span[matListItemTitle] {
+      color: white !important;
+    }
+  }
+}
+
+
+
+
+
+
+.sidenav-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #5779F8; // Dark blue background
+  color: white;
+  padding: 16px;
+}
+
+.sidenav-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .user-avatar {
+    margin: 0 auto 16px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .user-info {
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 4px 0 0;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.nav-menu {
+  flex: 1;
+  padding: 0;
+
+  a.mat-list-item {
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    mat-icon {
+      margin-right: 12px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &.selected-menu-item {
+      background-color: #5779F8; // Blue highlight
+      color: white;
+
+      mat-icon {
+        color: white;
+      }
+    }
+  }
+
+  .logout-item {
+    margin-top: 300px;
+    //border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 8px;
+  }
+}
+
+
+
+

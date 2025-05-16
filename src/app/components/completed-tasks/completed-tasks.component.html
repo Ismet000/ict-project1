@@ -1,0 +1,11 @@
+<div class="completed-tasks">
+      <h2>Completed Task</h2>
+      <div class="completed-task" *ngFor="let task of complitedTasksData">
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <div class="task-meta">
+          <span class="status-badge completed">Completed</span>
+          <span class="completed-on">Completed {{ task.completedOn | date:'dd/MM/yyyy' }}</span>
+        </div>
+      </div>
+</div>

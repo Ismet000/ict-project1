@@ -1,0 +1,40 @@
+<header class="header-container">
+  <div class="logo"><span>taskly</span></div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search your task here..." />
+    <button class="search-btn">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+
+  <div class="header-right">
+    <button class="icon-btn">
+      <mat-icon>notifications</mat-icon>
+    </button>
+
+    <!-- ✅ Calendar Icon that opens the datepicker -->
+    <button class="icon-btn" (click)="picker.open()">
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+
+    <!-- ✅ Hidden datepicker trigger -->
+    <mat-form-field style="display: none;">
+      <input
+        matInput
+        [matDatepicker]="picker"
+        (dateChange)="onDateChange($event)"
+      />
+      <mat-datepicker 
+      #picker
+       
+      ></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Date Info -->
+    <div class="date-info">
+      <div class="day">Tuesday</div>
+      <div class="date">20/03/2025</div>
+    </div>
+  </div>
+</header>

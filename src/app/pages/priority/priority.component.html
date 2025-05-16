@@ -1,0 +1,114 @@
+<div class="priority-container">
+
+  <div class="task-list m-5">
+
+    <h5 class="fancy-priority">🚨 On Priority 🚨</h5>
+
+    <mat-card 
+      *ngFor="let task of tasks()" 
+      [class.selected]="task.selected"
+      (click)="selectTask(task)"
+      class="task-card">
+      
+      <mat-card-header>
+        <mat-card-title>
+          <span class="task-status-icon">{{ task.status === 'Completed' ? '✓' : '○' }}</span>
+          {{ task.title }}
+        </mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p class="task-description">{{ task.description }}...</p>
+        <div class="task-meta">
+          <mat-chip class="priority-{{task.priority.toLowerCase()}}">
+            Priority: {{ task.priority }}
+          </mat-chip>
+          <mat-chip class="status-{{task.status.toLowerCase().replace(' ', '-')}}">
+            Status: {{ task.status }}
+          </mat-chip>
+          <span class="created-on">Created on: {{ task.createdOn | date:'dd/MM/yyyy' }}</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  @if (selectedTask()) {
+    <!-- <div class="task-actions">
+      <h3>For the selected task you can</h3>
+      
+      <div class="action-buttons">
+        <button mat-raised-button [matMenuTriggerFor]="priorityMenu">
+          Change priority
+        </button>
+        <mat-menu #priorityMenu="matMenu">
+          <button 
+            *ngFor="let priority of priorities" 
+            mat-menu-item 
+            (click)="updatePriority(selectedTask()!, priority)">
+            {{ priority }}
+          </button>
+        </mat-menu>
+
+        <button mat-raised-button [matMenuTriggerFor]="statusMenu">
+          Change status
+        </button>
+        <mat-menu #statusMenu="matMenu">
+          <button 
+            *ngFor="let status of statuses" 
+            mat-menu-item 
+            (click)="updateStatus(selectedTask()!, status)">
+            {{ status }}
+          </button>
+        </mat-menu>
+      </div>
+    </div> -->
+
+
+    <div class="task-actions">
+  <h3>For the selected task you can</h3>
+  
+  <div class="action-buttons">
+    <!-- Blue Priority Button -->
+    <button mat-raised-button 
+            [matMenuTriggerFor]="priorityMenu"
+            class="priority-button">
+      <mat-icon>priority_high</mat-icon>
+      Change priority
+    </button>
+    <mat-menu #priorityMenu="matMenu" class="priority-menu">
+      <button *ngFor="let priority of priorities" 
+              mat-menu-item 
+              (click)="updatePriority(selectedTask()!, priority)"
+              [class]="'priority-' + priority.toLowerCase()">
+        <mat-icon>
+          {{ priority === 'Extreme' ? 'warning' : 
+             priority === 'High' ? 'arrow_upward' : 
+             priority === 'Moderate' ? 'horizontal_rule' : 'arrow_downward' }}
+        </mat-icon>
+        {{ priority }}
+      </button>
+    </mat-menu>
+
+    <!-- Red Status Button -->
+    <button mat-raised-button 
+            [matMenuTriggerFor]="statusMenu"
+            class="status-button">
+      <mat-icon>flag</mat-icon>
+      Change status
+    </button>
+    <mat-menu #statusMenu="matMenu" class="status-menu">
+      <button *ngFor="let status of statuses" 
+              mat-menu-item 
+              (click)="updateStatus(selectedTask()!, status)"
+              [class]="'status-' + status.toLowerCase().replace(' ', '-')">
+        <mat-icon>
+          {{ status === 'Not Started' ? 'radio_button_unchecked' : 
+             status === 'In Progress' ? 'hourglass_top' : 'check_circle' }}
+        </mat-icon>
+        {{ status }}
+      </button>
+    </mat-menu>
+  </div>
+</div>
+  }
+</div>

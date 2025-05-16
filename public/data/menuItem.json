@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "dashboard",
+    "label": "Dashboard",
+    "route": "dashboard"
+  },
+  {
+    "icon": "priority_high",
+    "label": "On Priority",
+    "route": "priority"
+  },
+  {
+    "icon": "task",
+    "label": "My Task",
+    "route": "task"
+  },
+  {
+    "icon": "format_list_bulleted",
+    "label": "Task Categories",
+    "route": "comments"
+  },
+  {
+    "icon": "settings",
+    "label": "Settings",
+    "route": "comments"
+  },
+  {
+    "icon": "help",
+    "label": "Help",
+    "route": "comments"
+  }
+]

@@ -1,0 +1,100 @@
+<!-- <div class="progress-status">
+      <h2>Task Status</h2>
+      <div class="progress-bars">
+        <div class="progress-bar completed" [style.width.%]="84">
+          <span>84%</span>
+        </div>
+        <div class="progress-bar in-progress" [style.width.%]="46">
+          <span>46%</span>
+        </div>
+        <div class="progress-bar not-started" [style.width.%]="13">
+          <span>13%</span>
+        </div>
+      </div>
+      <div class="status-labels">
+        <span>Completed</span>
+        <span>In Progress</span>
+        <span>Not Started</span>
+      </div>
+</div> -->
+
+<!-- <div class="progress-status">
+
+
+  <h2>Task Status</h2>
+  <div class="progress-container">
+    <div class="progress-item">
+      <div class="percentage">84%</div>
+      <div class="progress-bar">
+        <div class="progress-fill completed" style="width: 84%"></div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="percentage">46%</div>
+      <div class="progress-bar">
+        <div class="progress-fill in-progress" style="width: 46%"></div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="percentage">13%</div>
+      <div class="progress-bar">
+        <div class="progress-fill not-started" style="width: 13%"></div>
+      </div>
+    </div>
+  </div>
+  <div class="status-labels">
+    <div class="status-item">
+      <div class="status-color completed"></div>
+      <span>Completed</span>
+    </div>
+    <div class="status-item">
+      <div class="status-color in-progress"></div>
+      <span>In Progress</span>
+    </div>
+    <div class="status-item">
+      <div class="status-color not-started"></div>
+      <span>Not Started</span>
+    </div>
+  </div>
+</div> -->
+
+
+
+<!-- <div class="circular-progress-status">
+  <h2>Task Status</h2>
+  <div class="progress-circles">
+    <div class="progress-circle-container">
+      <div class="progress-circle completed" [style.--percentage]="84">
+        <span>84%</span>
+      </div>
+      <div class="status-label">Completed</div>
+    </div>
+    <div class="progress-circle-container">
+      <div class="progress-circle in-progress" [style.--percentage]="46">
+        <span>46%</span>
+      </div>
+      <div class="status-label">In Progress</div>
+    </div>
+    <div class="progress-circle-container">
+      <div class="progress-circle not-started" [style.--percentage]="13">
+        <span>13%</span>
+      </div>
+      <div class="status-label">Not Started</div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="circular-progress-status">
+  <h2>Task Status</h2>
+  <div class="progress-circles">
+    <div class="progress-circle-container" *ngFor="let status of statusData">
+      <div class="progress-circle" 
+           [style.--percentage]="status.percentage"
+           [style.--color]="status.color">
+        <span>{{ status.percentage }}%</span>
+      </div>
+      <div class="status-label">{{ status.type }}</div>
+    </div>
+  </div>
+</div>

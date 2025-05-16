@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Add New Task</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Due date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dueDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="priority-section">
+      <p>Priority <span class="hint">(you can let AI choose this for you)</span></p>
+      <mat-radio-group formControlName="priority">
+        <mat-radio-button *ngFor="let priority of priorities" [value]="priority.value">
+          {{ priority.label }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Task Description</mat-label>
+      <textarea matInput formControlName="description" rows="4" placeholder="Start writing here..."></textarea>
+    </mat-form-field>
+
+    <div class="upload-section">
+      <p>Upload Image</p>
+      <div class="upload-box" (click)="fileInput.click()">
+        <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" hidden>
+        <mat-icon>cloud_upload</mat-icon>
+        <p>Drag & Drop files here or <span class="browse-link">Browse</span></p>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!taskForm.valid">
+    Add Task
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,63 @@
+<!-- <div class="task-card">
+      <h3>{{ task.title }}</h3>
+      <p>{{ task.description }}</p>
+      <div *ngIf="task.time || task.location" class="task-meta">
+        <span *ngIf="task.time">{{ task.time }} | </span>
+        <span>{{ task.location }}</span>
+      </div>
+      <div class="task-footer">
+        <span class="priority-badge" [class]="task.priority.toLowerCase()">
+          {{ task.priority }}
+        </span>
+        <span class="status-badge" [class]="task.status.toLowerCase().replace(' ', '-')">
+          {{ task.status }}
+        </span>
+        <span class="created-on">Created on: {{ task.createdOn | date:'dd/MM/yyyy' }}</span>
+      </div>
+</div> -->
+
+
+<div class="task-card">
+  <!-- Card Header with Menu -->
+  <div class="card-header">
+    <h3>{{ task.title }}</h3>
+    <button mat-icon-button [matMenuTriggerFor]="taskMenu" class="menu-button">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #taskMenu="matMenu">
+      <button mat-menu-item (click)="changeStatus(task, 'Not Started')">
+        <mat-icon>radio_button_unchecked</mat-icon>
+        <span>Mark as Not Started</span>
+      </button>
+      <button mat-menu-item (click)="changeStatus(task, 'In Progress')">
+        <mat-icon>hourglass_top</mat-icon>
+        <span>Mark as In Progress</span>
+      </button>
+      <button mat-menu-item (click)="changeStatus(task, 'Completed')">
+        <mat-icon>check_circle</mat-icon>
+        <span>Mark as Completed</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="deleteTask(task)" class="delete-action">
+        <mat-icon color="warn">delete</mat-icon>
+        <span>Delete Task</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <!-- Card Content -->
+  <p>{{ task.description }}</p>
+  <div *ngIf="task.time || task.location" class="task-meta">
+    <span *ngIf="task.time">{{ task.time }} | </span>
+    <span>{{ task.location }}</span>
+  </div>
+  <div class="task-footer">
+    <span class="priority-badge" [class]="task.priority.toLowerCase()">
+      {{ task.priority }}
+    </span>
+    <span class="status-badge" [class]="task.status.toLowerCase().replace(' ', '-')">
+      {{ task.status }}
+    </span>
+    <span class="created-on">Created on: {{ task.createdOn | date:'dd/MM/yyyy' }}</span>
+  </div>
+</div>

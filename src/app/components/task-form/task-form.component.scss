@@ -1,0 +1,56 @@
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.priority-section {
+  margin-bottom: 24px;
+
+  .hint {
+    color: #666;
+    font-size: 0.9em;
+    font-weight: normal;
+  }
+
+  mat-radio-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+  }
+}
+
+.upload-section {
+  margin-bottom: 24px;
+
+  .upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #3f51b5;
+      background-color: #f5f5f5;
+    }
+
+    mat-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      color: #3f51b5;
+      margin-bottom: 8px;
+    }
+
+    .browse-link {
+      color: #3f51b5;
+      text-decoration: underline;
+    }
+  }
+}
+
+mat-dialog-actions {
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+}

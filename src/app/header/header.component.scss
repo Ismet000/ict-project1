@@ -1,0 +1,87 @@
+/* header.component.scss */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #6171f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo span {
+  color: #3d4ddf;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 32px;
+  background-color: #f4f6fb;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px 0 0 12px;
+}
+
+.search-btn {
+  border: none;
+  background-color: #6171f8;
+  color: white;
+  padding: 12px;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  background-color: #6171f8;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.day {
+  font-weight: 600;
+  color: #111;
+}
+
+.date {
+  font-size: 14px;
+  color: #67b9ff;
+}

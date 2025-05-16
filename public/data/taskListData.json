@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Attend Nischal's Birthday Party",
+    "description": "Buy gifts on the way and pick up cake from the bakery.",
+    "time": "6 PM",
+    "location": "Fresh Elements",
+    "priority": "Moderate",
+    "status": "Not Started",
+    "createdOn": "2023-06-20T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Landing Page Design for TravelDays",
+    "description": "Get the work done by EOD and discuss with client before leaving.",
+    "time": "4 PM",
+    "location": "Meeting Room",
+    "priority": "Moderate",
+    "status": "In Progress",
+    "createdOn": "2023-06-20T00:00:00.000Z"
+  }
+]

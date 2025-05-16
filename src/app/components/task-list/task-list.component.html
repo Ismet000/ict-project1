@@ -1,0 +1,10 @@
+<div class="task-list">
+    <div class="sameRow">
+        <p>To-Do</p>
+        <mat-icon matListItemIcon>assignment</mat-icon>
+    </div>
+      <app-task-card 
+        *ngFor="let task of taskListData" 
+        [task]="task">
+      </app-task-card>
+</div>

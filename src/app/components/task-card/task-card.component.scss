@@ -1,0 +1,138 @@
+/* // task-card.component.scss
+.task-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .task-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 8px 0;
+  }
+  
+  .task-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 0.85em;
+    
+    .priority-badge, .status-badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+      
+      &.moderate {
+        background: #FFF3E0;
+        color: #E65100;
+      }
+      
+      &.not-started {
+        background: #E0E0E0;
+        color: #424242;
+      }
+      
+      &.in-progress {
+        background: #E3F2FD;
+        color: #0D47A1;
+      }
+    }
+    
+    .created-on {
+      margin-left: auto;
+      color: #757575;
+    }
+  }
+} */
+
+
+
+.task-card {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+
+    h3 {
+      margin: 0;
+      color: #333;
+      flex: 1;
+    }
+
+    .menu-button {
+      width: 32px;
+      height: 32px;
+      margin-left: 8px;
+    }
+  }
+
+  .task-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 8px 0;
+  }
+
+  .task-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    font-size: 0.85em;
+    
+    .priority-badge, .status-badge {
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+      
+      &.low { background-color: #E8F5E9; color: #2E7D32; }
+      &.moderate { background-color: #E3F2FD; color: #0D47A1; }
+      &.high { background-color: #FFF3E0; color: #E65100; }
+      &.extreme { background-color: #FFEBEE; color: #C62828; }
+      
+      &.not-started { background-color: #E0E0E0; color: #424242; }
+      &.in-progress { background-color: #FFF3E0; color: #E65100; }
+      &.completed { background-color: #E8F5E9; color: #2E7D32; }
+    }
+    
+    .created-on {
+      margin-left: auto;
+      color: #757575;
+    }
+  }
+}
+
+/* Menu item styles */
+.delete-action {
+  color: #f44336 !important;
+}
+
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  mat-icon {
+    margin-right: 8px;
+  }
+}

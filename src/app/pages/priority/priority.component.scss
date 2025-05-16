@@ -1,0 +1,261 @@
+.priority-container {
+  padding: 24px;
+  
+  h1 {
+    margin-bottom: 24px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.task-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  &.selected {
+    border-left: 4px solid #5779F8;
+    background-color: #f5f8ff;
+  }
+  
+  .task-status-icon {
+    margin-right: 8px;
+    color: #666;
+  }
+  
+  .task-description {
+    color: #666;
+    margin: 8px 0 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    
+    mat-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      
+      &.priority-extreme {
+        background-color: #ff5252;
+        color: white;
+      }
+      
+      &.priority-high {
+        background-color: #ff9800;
+        color: white;
+      }
+      
+      &.priority-moderate {
+        background-color: #2196f3;
+        color: white;
+      }
+      
+      &.priority-low {
+        background-color: #4caf50;
+        color: white;
+      }
+      
+      &.status-not-started {
+        background-color: #e0e0e0;
+        color: #424242;
+      }
+      
+      &.status-in-progress {
+        background-color: #fff3e0;
+        color: #e65100;
+      }
+      
+      &.status-completed {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+    }
+    
+    .created-on {
+      font-size: 0.75rem;
+      color: #999;
+      margin-left: auto;
+    }
+  }
+}
+
+/* .task-actions {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    
+    button {
+      flex: 1;
+    }
+  }
+} */
+
+
+.task-actions {
+  margin-top: 24px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #444;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 16px;
+    
+    button {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+      padding: 12px 16px;
+      transition: all 0.2s ease;
+      
+      mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    
+    .priority-button {
+      background-color: #5779F8;
+      color: white;
+      
+      &:hover {
+        background-color: #3a5bd9;
+        transform: translateY(-1px);
+      }
+    }
+    
+    .status-button {
+      background-color: #FF5B5B;
+      color: white;
+      
+      &:hover {
+        background-color: #e04141;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+/* Priority Menu Items */
+.priority-menu {
+
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+    
+    &.priority-extreme {
+      color: #d32f2f;
+      mat-icon {
+        color: #d32f2f;
+      }
+    }
+    
+    &.priority-high {
+      color: #ff9800;
+      mat-icon {
+        color: #ff9800;
+      }
+    }
+    
+    &.priority-moderate {
+      color: #2196f3;
+      mat-icon {
+        color: #2196f3;
+      }
+    }
+    
+    &.priority-low {
+      color: #4caf50;
+      mat-icon {
+        color: #4caf50;
+      }
+    }
+  }
+}
+
+/* Status Menu Items */
+.status-menu {
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    mat-icon {
+      margin-right: 8px;
+    }
+    
+    &.status-not-started {
+      color: #757575;
+      mat-icon {
+        color: #757575;
+      }
+    }
+    
+    &.status-in-progress {
+      color: #ff9800;
+      mat-icon {
+        color: #ff9800;
+      }
+    }
+    
+    &.status-completed {
+      color: #4caf50;
+      mat-icon {
+        color: #4caf50;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,52 @@
+.completed-tasks {
+  h2 {
+    margin: 0 0 16px 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .completed-task {
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    h3 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0 0 8px 0;
+      font-size: 0.85rem;
+      color: #616161;
+    }
+
+    .task-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .status-badge {
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 500;
+
+        &.completed {
+          background-color: #E8F5E9; // Light green
+          color: #2E7D32; // Dark green
+        }
+      }
+
+      .completed-on {
+        font-size: 0.75rem;
+        color: #757575;
+      }
+    }
+  }
+}

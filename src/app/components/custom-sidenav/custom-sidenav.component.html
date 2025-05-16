@@ -1,0 +1,58 @@
+<!-- <div class="sidenav-header">
+    <img src="../../../assets/images/image.png" width="100px" height="100px" alt="image">
+
+    <div class="header-text">
+        <h2>Your Chanel</h2>
+        <p>zoaib Khan</p>
+    </div>
+
+    <mat-nav-list>
+        <a 
+        mat-list-item
+        *ngFor="let item of menuItems()"
+        [routerLink]="item.route"
+        routerLinkActive="selected-menu-item"
+        #rla="routerLinkActive"
+        [activated]="rla.isActive"
+        >
+            <mat-icon matListItemIcon>{{ item.icon}}</mat-icon>
+            <span matListItemTitle class="title">{{ item.label}}</span>
+        </a>
+    </mat-nav-list>
+</div> -->
+
+
+<div class="sidenav-container">
+  <div class="sidenav-header">
+    <div class="user-avatar">
+      <img src="../../../assets/images/image.png" alt="User avatar">
+    </div>
+    
+    <div class="user-info">
+      <h3>John Doe</h3>
+      <p>johndoegmail.com</p>
+    </div>
+  </div>
+
+  <mat-nav-list class="nav-menu">
+    <a mat-list-item 
+       *ngFor="let item of menuData"
+       [routerLink]="item.route"
+       routerLinkActive="selected-menu-item"
+       #rla="routerLinkActive"
+       [activated]="rla.isActive">
+      <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+      <span matListItemTitle>{{item.label}}</span>
+    </a>
+    
+    <!-- Logout button at bottom -->
+    <a mat-list-item class="logout-item mt-5">
+      <mat-icon matListItemIcon>logout</mat-icon>
+      <span matListItemTitle>Logout</span>
+    </a>
+  </mat-nav-list>
+</div>
+
+
+
+
