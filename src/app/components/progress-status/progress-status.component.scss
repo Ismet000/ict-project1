@@ -306,3 +306,46 @@
     text-align: center;
   }
 }
+
+
+.progress-circle {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+
+
+.circular-progress-status {
+  /* Your existing styles remain the same */
+  
+  .progress-circle {
+    /* Your existing styles */
+    animation: progress-animation 1s ease-out forwards;
+    
+    /* Rest of your existing circle styles */
+  }
+}
+
+@keyframes progress-animation {
+  from {
+    background: conic-gradient(
+      var(--color) 0%,
+      #f0f0f0 0%
+    );
+  }
+  to {
+    background: conic-gradient(
+      var(--color) calc(var(--percentage) * 1%),
+      #f0f0f0 calc(var(--percentage) * 1%)
+    );
+  }
+}
+
+
+
