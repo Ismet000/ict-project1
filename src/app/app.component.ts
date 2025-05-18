@@ -8,6 +8,7 @@ import { CustomSidenavComponent } from "./components/custom-sidenav/custom-siden
 import { HeaderComponent } from "./header/header.component";
 import { LoginComponent } from "./login/login.component";
 import { TaskListMyComponent } from './components/task-list-my/task-list-my.component';
+import { DeletedTasksComponent } from "./pages/deleted-tasks/deleted-tasks.component";
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +20,8 @@ import { TaskListMyComponent } from './components/task-list-my/task-list-my.comp
     MatSidenavModule,
     CustomSidenavComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    DeletedTasksComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

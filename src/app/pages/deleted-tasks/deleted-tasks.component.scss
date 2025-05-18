@@ -1,0 +1,185 @@
+.deleted-tasks-container {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+
+  .bin-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+
+    mat-icon {
+      color: #f44336;
+      margin-right: 12px;
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .count-badge {
+      background: #f44336;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-left: 12px;
+    }
+  }
+
+  .search-restore-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+
+    mat-form-field {
+      flex: 1;
+
+      .mat-form-field-outline {
+        background-color: #f8f8f8;
+        border-radius: 8px;
+      }
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+      mat-icon {
+        color: #777;
+      }
+
+      input {
+        font-size: 0.95rem;
+      }
+    }
+
+    button {
+      border-radius: 8px;
+      font-weight: 500;
+      padding: 0 20px;
+    }
+  }
+
+  .tasks-accordion {
+    mat-expansion-panel {
+      border-radius: 8px !important;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+      border: 1px solid #eee;
+
+      &:hover {
+        border-color: #ddd;
+      }
+
+      mat-expansion-panel-header {
+        padding: 16px 20px;
+        height: auto !important;
+
+        mat-panel-title {
+          font-weight: 500;
+          color: #333;
+        }
+
+        mat-panel-description {
+          color: #777;
+          font-size: 0.85rem;
+          justify-content: flex-end;
+        }
+      }
+
+      .mat-expansion-panel-content {
+        .mat-expansion-panel-body {
+          padding: 0 20px 16px;
+        }
+      }
+
+      .task-details {
+        p {
+          color: #555;
+          line-height: 1.5;
+          margin-bottom: 16px;
+        }
+
+        .task-meta {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          gap: 12px;
+          margin-top: 16px;
+          font-size: 0.9rem;
+
+          span {
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            strong {
+              color: #444;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid #f0f0f0;
+
+        button {
+          font-weight: 500;
+          border-radius: 6px;
+          padding: 0 16px;
+
+          mat-icon {
+            margin-right: 6px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+
+    mat-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      color: #ddd;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/* Animation for panel expansion */
+.mat-expansion-indicator::after {
+  color: #777;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+  background-color: rgba(244, 67, 54, 0.04);
+}

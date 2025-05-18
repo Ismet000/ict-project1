@@ -20,9 +20,9 @@
     "route": "comments"
   },
   {
-    "icon": "settings",
-    "label": "Settings",
-    "route": "comments"
+    "icon": "delete_forever",
+    "label": "Deleted Tasks",
+    "route": "deleted"
   },
   {
     "icon": "help",

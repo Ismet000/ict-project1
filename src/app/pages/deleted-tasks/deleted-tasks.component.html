@@ -1,0 +1,101 @@
+<!-- <div class="deleted-tasks-container">
+  <div class="bin-header">
+    <mat-icon>delete</mat-icon>
+    <h2>Deleted Tasks</h2>
+    <span class="count-badge">{{deletedTasks.length}} items</span>
+  </div>
+
+  <div class="search-restore-bar">
+    <mat-form-field appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Search deleted tasks...">
+    </mat-form-field>
+    <button mat-stroked-button color="primary">Restore All</button>
+  </div>
+
+  <mat-accordion class="tasks-accordion">
+    <mat-expansion-panel *ngFor="let task of deletedTasks">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{task.title}}</mat-panel-title>
+        <mat-panel-description>
+          Deleted on {{task.deletedDate | date}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <div class="task-details">
+        <p>{{task.description}}</p>
+        <div class="task-meta">
+          <span>Originally due: {{task.dueDate | date}}</span>
+          <span>Priority: {{task.priority}}</span>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button mat-button color="primary" (click)="restoreTask(task)">
+          <mat-icon>restore</mat-icon> Restore
+        </button>
+        <button mat-button color="warn" (click)="permanentlyDelete(task)">
+          <mat-icon>delete_forever</mat-icon> Delete Permanently
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div *ngIf="deletedTasks.length === 0" class="empty-state">
+    <mat-icon>delete_outline</mat-icon>
+    <p>Your recycle bin is empty</p>
+  </div>
+</div> -->
+
+
+<div class="deleted-tasks-container">
+  <div class="bin-header">
+    <mat-icon>delete</mat-icon>
+    <h2>Deleted Tasks</h2>
+    <span class="count-badge">{{deletedTasks.length}} items</span>
+  </div>
+
+  <div class="search-restore-bar">
+    <mat-form-field appearance="outline">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Search deleted tasks..." [(ngModel)]="searchQuery">
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="restoreAll()">Restore All</button>
+  </div>
+
+  <mat-accordion class="tasks-accordion">
+    <mat-expansion-panel *ngFor="let task of filteredTasks">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{task.title}}</mat-panel-title>
+        <mat-panel-description>
+          Deleted on {{task.deletedDate | date:'mediumDate'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      
+      <div class="task-details">
+        <p>{{task.description}}</p>
+        <div class="task-meta">
+          <span><strong>Originally due:</strong> {{task.dueDate | date:'mediumDate'}} at {{formatTime(task.dueDate)}}</span>
+          <span *ngIf="task.location"><strong>Location:</strong> {{task.location}}</span>
+          <span><strong>Priority:</strong> {{task.priority}}</span>
+          <span><strong>Status:</strong> {{task.status}}</span>
+          <span><strong>Category:</strong> {{task.category}}</span>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button mat-button color="primary" (click)="restoreTask(task)">
+          <mat-icon>restore</mat-icon> Restore
+        </button>
+        <button mat-button color="warn" (click)="permanentlyDelete(task)">
+          <mat-icon>delete_forever</mat-icon> Delete Permanently
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div *ngIf="deletedTasks.length === 0" class="empty-state">
+    <mat-icon>delete_outline</mat-icon>
+    <p>Your recycle bin is empty</p>
+  </div>
+</div>

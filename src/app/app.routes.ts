@@ -3,6 +3,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TaskComponent } from './pages/task/task.component';
 import { PriorityComponent } from './pages/priority/priority.component';
 import { LoginComponent } from './login/login.component';
+import { DeletedTasksComponent } from './pages/deleted-tasks/deleted-tasks.component';
 
 export const routes: Routes = [
      
@@ -26,6 +27,11 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'deleted',
+        component: DeletedTasksComponent
     }
+    
     
 ];
