@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened [style.width]="'300px'">
+    <app-custom-sidenav></app-custom-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -30,7 +30,7 @@ export class AppComponent {
   title = 'ict_project1';
 
 
-  isAuthenticated = false;
+  isAuthenticated = true;
 
   constructor(private router: Router) {
     // Watch for route changes
